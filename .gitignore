@@ -1,0 +1,7 @@
+node_modules
+dist/
+yarn.lock
+package-lock.json
+electron-builder.json.txt
+electron-auto-update.code-workspace
+.env

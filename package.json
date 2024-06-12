@@ -1,0 +1,63 @@
+{
+  "name": "electron-updater-example",
+  "version": "0.8.21",
+  "main": "main.js",
+  "description": "electron-updater example project",
+  "author": "Long <longhv2206@gmail.com>",
+  "email": "longhv2206@gmail.com",
+  "scripts": {
+    "start": "electron .",
+    "publish": "electron-builder -mwl --x64 -p always",
+    "publish-mac": "electron-builder -m -p always",
+    "p1": "electron-builder --mac",
+    "p2": "electron-builder -w --x64"
+  },
+  "devDependencies": {
+    "electron": "^14.0.1",
+    "electron-builder": "^23.6.0",
+    "electron-notarize": "^1.1.1"
+  },
+  "dependencies": {
+    "electron-log": "^4.4.1",
+    "electron-updater": "^4.3.9"
+  },
+  "build": {
+    "appId": "com.github.leeorichi.electronupdaterexample",
+    "afterSign": "./build/notarize.js",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "./icons/logo.ico",
+      "publisherName": [
+        "s3 SRL",
+        "s3 srl",
+        "s3 srl"
+      ],
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName" : "S3 Salon Earse"
+    },
+    "linux": {
+      "category": "your.app.category.type",
+      "target": ["deb", "AppImage"]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "leeorichi",
+        "repo": "electron-auto-update"
+      }
+    ]
+  }
+}
