@@ -1,9 +1,9 @@
 {
-  "name": "electron-updater-example",
-  "version": "0.8.21",
+  "name": "longhas-salon-nail",
+  "version": "0.0.1",
   "main": "main.js",
-  "description": "electron-updater example project",
-  "author": "Long <longhv2206@gmail.com>",
+  "description": "Longha's Nail Salon",
+  "author": "Long Ha <longhv2206@gmail.com>",
   "email": "longhv2206@gmail.com",
   "scripts": {
     "start": "electron .",
@@ -22,20 +22,19 @@
     "electron-updater": "^4.3.9"
   },
   "build": {
-    "appId": "com.github.leeorichi.electronupdaterexample",
+    "appId": "havanlong.app.nail.salon",
     "afterSign": "./build/notarize.js",
     "mac": {
-      "category": "your.app.category.type"
+      "category": "havanlong.app.nail.salon",
+      "icon": "./icons/logo.jpg.ico"
     },
     "win": {
       "target": [
         "nsis"
       ],
-      "icon": "./icons/logo.ico",
+      "icon": "./icons/logo.jpg.ico",
       "publisherName": [
-        "s3 SRL",
-        "s3 srl",
-        "s3 srl"
+        "Longha's Nail Salon"
       ],
       "verifyUpdateCodeSignature": false
     },
@@ -46,17 +45,18 @@
       "deleteAppDataOnUninstall": false,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName" : "S3 Salon Earse"
+      "shortcutName" : "Longha's Nail Salon"
     },
     "linux": {
-      "category": "your.app.category.type",
-      "target": ["deb", "AppImage"]
+      "category": "havanlong.app.nail.salon",
+      "target": ["deb", "AppImage"],
+      "icon": "./icons/logo.jpg.ico"
     },
     "publish": [
       {
         "provider": "github",
         "owner": "leeorichi",
-        "repo": "electron-auto-update"
+        "repo": "electron-builder"
       }
     ]
   }
